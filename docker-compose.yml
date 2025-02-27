@@ -1,0 +1,43 @@
+# version: '3'
+services:
+  ept:
+    image: event_prediction_ept
+    container_name: event_prediction_ept
+    build: ./event_prediction_EPT
+    restart: always
+
+  lfr:
+    image: event_prediction_lfr
+    container_name: event_prediction_lfr
+    build: ./event_prediction_LFR
+    restart: always
+
+  esm:
+    image: event_prediction_esm
+    container_name: event_prediction_esm
+    build: ./event_prediction_ESM
+    restart: always
+
+  ranking_model:
+    image: event_prediction_rm
+    container_name: event_prediction_rm
+    build: ./event_prediction_RM
+    restart: always
+
+  collector:
+    image: event_prediction_collector
+    container_name: event_prediction_collector
+    build: ./event_prediction_collector
+    restart: always
+
+  event_specialist:
+    image: event_prediction_llm
+    container_name: event_prediction_llm
+    build: ./event_prediction_LLM
+    restart: always
+
+  models_manager:
+    image: event_prediction_models_manager
+    container_name: event_prediction_models_manager
+    build: ./event_prediction_models_manager
+    restart: always
