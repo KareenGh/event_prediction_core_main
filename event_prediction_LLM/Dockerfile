@@ -8,7 +8,7 @@ WORKDIR /app
 COPY main.py .
 
 # Install the required Python packages
-RUN pip install kafka-python
+RUN pip install kafka-python python-dotenv
 
 # Define the command to run the script
 CMD ["python", "main.py"]
